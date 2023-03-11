@@ -24,21 +24,32 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
                         </li>
+
+                        {% if user.is_authenticated %}
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page"
-                                href="{% url 'App_login:register' %}">SignUp</a>
+                            <a class="nav-link active" aria-current="page" href="{% url 'App_login:logout' %}">Sign
+                                Out</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{% url 'App_login:login' %}">SignIn</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link active" aria-current="page"
-                                href="{% url 'App_login:logout' %}">SignOut</a>
+                                href="{% url 'App_login:profile' %}">Profile</a>
                         </li>
 
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{% url 'App_login:register' %}">Sign
+                                Up</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{% url 'App_login:login' %}">Sign
+                                In</a>
+                        </li>
+
+                        {% endif %}
                     </ul>
                     <form class="d-flex">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

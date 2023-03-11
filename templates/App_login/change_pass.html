@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title_block %}
+Change Password
+{% endblock  %}
+{% block body_block %}
+{% if changed %}
+<div class="alert alert-success">Password changed successfully</div>
+{% else %}
+<form method="post">
+    {{ form|crispy }}
+    {% csrf_token %}
+    <button type="submit" class="btn btn-success">Change Password</button>
+</form>
+{% endif %}
+
+{% endblock body_block %}
