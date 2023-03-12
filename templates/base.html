@@ -38,13 +38,11 @@
                                 @{{user.username}}
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" aria-current="page"
-                                        href="{% url 'App_Blog:create_blog' %}">Write Blog</a></li>
-                                <li><a class="dropdown-item" aria-current="page"
-                                        href="{% url 'App_login:profile' %}">Your Profile</a></li>
+                                <li><a class="dropdown-item" href="{% url 'App_Blog:my_blogs' %}">My Blogs</a></li>
+                                <li><a class="dropdown-item" href="{% url 'App_Blog:create_blog' %}">Write Blog</a></li>
+                                <li><a class="dropdown-item" href="{% url 'App_login:profile' %}">Your Profile</a></li>
                                 <hr>
-                                <li><a class="dropdown-item" aria-current="page"
-                                        href="{% url 'App_login:logout' %}">logout</a></li>
+                                <li><a class="dropdown-item" href="{% url 'App_login:logout' %}">logout</a></li>
                             </ul>
                         </li>
 
