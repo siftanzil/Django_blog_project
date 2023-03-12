@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title_block %}
+Change profile
+{% endblock  %}
+{% block body_block %}
+
+{% if created %}
+<div class="alert alert-success">Profile changed successfully</div>
+{% else %}
+<h2>Write your blog here:</h2>
+<form method="post" enctype="multipart/form-data">
+    {{ form|crispy }}
+    {% csrf_token %}
+    <button type="submit" class="btn btn-success">Publish</button>
+</form>
+
+{% endif %}
+{% endblock body_block %}

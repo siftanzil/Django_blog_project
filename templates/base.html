@@ -26,7 +26,7 @@
 
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="{% url 'index' %}"><img
-                                    src="/media/blog_logo.png" width="50px"></a>
+                                    src="/media/logo.png" alt="Home" width="30px"></a>
                         </li>
 
                         {% if user.is_authenticated %}
@@ -37,7 +37,10 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" aria-current="page"
-                                        href="{% url 'App_login:profile' %}">profile</a></li>
+                                        href="{% url 'App_Blog:create_blog' %}">Write Blog</a></li>
+                                <li><a class="dropdown-item" aria-current="page"
+                                        href="{% url 'App_login:profile' %}">Your Profile</a></li>
+                                <hr>
                                 <li><a class="dropdown-item" aria-current="page"
                                         href="{% url 'App_login:logout' %}">logout</a></li>
                             </ul>
@@ -54,10 +57,6 @@
 
                         {% endif %}
                     </ul>
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
                 </div>
             </div>
         </nav>
